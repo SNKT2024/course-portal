@@ -27,7 +27,7 @@ export default function CourseViewer() {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-          `http://localhost:3000/api/course/${courseId}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/${courseId}`,
           {
             method: "GET",
             headers: {

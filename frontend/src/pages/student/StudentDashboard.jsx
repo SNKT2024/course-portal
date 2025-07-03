@@ -18,7 +18,9 @@ export default function StudentDashboard() {
   const token = localStorage.getItem("token");
 
   const fetchEnrolledCourses = async () => {
-    const url = "http://localhost:3000/api/student/dashboard/courses";
+    const url = `${
+      import.meta.env.VITE_API_BASE_URL
+    }/api/student/dashboard/courses`;
     try {
       const response = await fetch(url, {
         method: "GET",

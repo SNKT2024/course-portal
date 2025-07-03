@@ -42,7 +42,7 @@ export default function AddLessonModal({ section, setSections }) {
       formData.append("video", lessonData.videoFile);
 
       const uploadRes = await axios.post(
-        "http://localhost:3000/api/upload/video",
+        `${import.meta.env.VITE_API_BASE_URL}/api/upload/video`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -58,7 +58,11 @@ export default function AddLessonModal({ section, setSections }) {
       const videoUrl = uploadRes.data.videoUrl.replace(/^"(.*)"$/, "$1");
 
       const res = await fetch(
-        `http://localhost:3000/api/course/create-lesson/${courseId}/sections/${section._id}/add-lessons`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/create-lesson/${courseId}/sections/${
+          section._id
+        }/add-lessons`,
         {
           method: "POST",
           headers: {

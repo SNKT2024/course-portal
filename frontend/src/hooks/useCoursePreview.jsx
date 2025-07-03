@@ -16,7 +16,9 @@ export const useCoursePreview = (courseId, user) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:3000/api/course/${courseId}`);
+        const res = await fetch(
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/${courseId}`
+        );
         const data = await res.json();
         if (res.ok) {
           setCourse(data.data);
@@ -26,7 +28,7 @@ export const useCoursePreview = (courseId, user) => {
 
         if (user) {
           const enrollRes = await fetch(
-            `http://localhost:3000/api/enroll/check/${courseId}`,
+            `${import.meta.env.VITE_API_BASE_URL}/api/enroll/check/${courseId}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`,

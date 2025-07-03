@@ -13,7 +13,7 @@ export default function MyCourses() {
         const token = localStorage.getItem("token");
 
         const response = await fetch(
-          "http://localhost:3000/api/course/teacher-courses",
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/teacher-courses`,
           {
             method: "GET",
             headers: {

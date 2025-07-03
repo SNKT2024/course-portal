@@ -22,7 +22,9 @@ export default function Revenue() {
 
       try {
         const res = await fetch(
-          "http://localhost:3000/api/teacher/get-teacher-dashboard",
+          `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/teacher/get-teacher-dashboard`,
           {
             headers: {
               Authorization: `${token}`,

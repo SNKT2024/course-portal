@@ -24,7 +24,7 @@ export default function AddSections() {
       setFetchLoading(true);
       try {
         const res = await fetch(
-          `http://localhost:3000/api/course/${courseId}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/${courseId}`,
           {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
@@ -61,7 +61,9 @@ export default function AddSections() {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:3000/api/course/create-section/${courseId}/sections`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/create-section/${courseId}/sections`,
         {
           method: "POST",
           headers: {
@@ -98,7 +100,9 @@ export default function AddSections() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/course/${courseId}/sections/${sectionId}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/${courseId}/sections/${sectionId}`,
         {
           method: "DELETE",
           headers: { Authorization: token },
@@ -131,7 +135,9 @@ export default function AddSections() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/course/${courseId}/sections/${sectionId}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/${courseId}/sections/${sectionId}`,
         {
           method: "PUT",
           headers: {
@@ -253,7 +259,11 @@ export default function AddSections() {
                           if (!window.confirm("Delete this lesson?")) return;
                           try {
                             const res = await fetch(
-                              `http://localhost:3000/api/course/${courseId}/sections/${section._id}/lessons/${lesson._id}`,
+                              `${
+                                import.meta.env.VITE_API_BASE_URL
+                              }/api/course/${courseId}/sections/${
+                                section._id
+                              }/lessons/${lesson._id}`,
                               {
                                 method: "DELETE",
                                 headers: {

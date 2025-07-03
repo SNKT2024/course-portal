@@ -34,7 +34,9 @@ export default function EditLessonModal({
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:3000/api/course/${courseId}/sections/${sectionId}/lessons/${lesson._id}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/${courseId}/sections/${sectionId}/lessons/${lesson._id}`,
         {
           method: "PUT",
           headers: {

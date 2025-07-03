@@ -13,7 +13,9 @@ export default function StudentList() {
 
       try {
         const res = await fetch(
-          "http://localhost:3000/api/teacher/get-student-details",
+          `${
+            import.meta.env.VITE_API_BASE_URL
+          }/api/teacher/get-student-details`,
           {
             method: "GET",
             headers: {

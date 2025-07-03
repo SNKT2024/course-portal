@@ -28,7 +28,9 @@ export default function EnrollPage() {
 
     const fetchCourse = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/course/${courseId}`);
+        const res = await fetch(
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/${courseId}`
+        );
         const data = await res.json();
         if (res.ok) {
           setCourse(data.data);
@@ -49,13 +51,16 @@ export default function EnrollPage() {
   const handleEnroll = async () => {
     setEnrolling(true);
     try {
-      const res = await fetch(`http://localhost:3000/api/enroll/${courseId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/enroll/${courseId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
       const data = await res.json();
       if (res.ok) {

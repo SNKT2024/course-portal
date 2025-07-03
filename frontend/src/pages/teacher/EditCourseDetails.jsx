@@ -45,7 +45,7 @@ export default function EditCourseDetails() {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://localhost:3000/api/course/${courseId}`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/course/${courseId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -89,7 +89,9 @@ export default function EditCourseDetails() {
     try {
       setUpdating(true);
       const res = await fetch(
-        `http://localhost:3000/api/course/edit-course/${courseId}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/edit-course/${courseId}`,
         {
           method: "PUT",
           headers: {
@@ -117,7 +119,9 @@ export default function EditCourseDetails() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/course/delete-course/${courseId}`,
+        `${
+          import.meta.env.VITE_API_BASE_URL
+        }/api/course/delete-course/${courseId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

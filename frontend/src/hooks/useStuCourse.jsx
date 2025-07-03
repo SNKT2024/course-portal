@@ -9,7 +9,7 @@ const useStuCourse = (studentId) => {
     const fetchCourses = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/student/dashboard/courses`
+          `${import.meta.env.VITE_API_BASE_URL}/api/student/dashboard/courses`
         );
 
         if (!res.ok) {
@@ -34,7 +34,7 @@ const useStuCourse = (studentId) => {
   const getCourseById = async (courseId) => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/student/course/${courseId}`
+        `${import.meta.env.VITE_API_BASE_URL}/api/student/course/${courseId}`
       );
       if (!res.ok) throw new Error(`Response status: ${res.status}`);
       const courseDetails = await res.json();

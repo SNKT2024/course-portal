@@ -61,7 +61,7 @@ export default function CreateCourse() {
     setUploadProgress(0);
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/api/course/create");
+    xhr.open("POST", `${import.meta.env.VITE_API_BASE_URL}/api/course/create`);
     xhr.setRequestHeader("Authorization", `Bearer ${token}`);
 
     xhr.upload.onprogress = (event) => {
