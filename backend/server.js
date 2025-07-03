@@ -15,10 +15,9 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
 app.use(
   cors({
-    origin: `https://course-portal-frontend-alpha.vercel.app/`,
+    origin: `https://course-portal-frontend-alpha.vercel.app`,
     credentials: true,
   })
 );
