@@ -19,6 +19,7 @@ app.use(cors());
 app.use(
   cors({
     origin: `https://course-portal-frontend-alpha.vercel.app/`,
+    credentials: true,
   })
 );
 
