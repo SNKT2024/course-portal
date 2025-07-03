@@ -4,11 +4,11 @@ This project is a comprehensive **Course Portal** (Learning Management System) a
 
 ## Table of Contents
 
-  * [Features](https://www.google.com/search?q=%23features)
-  * [Technology Stack](https://www.google.com/search?q=%23technology-stack)
-  * [Installation and Setup](https://www.google.com/search?q=%23installation-and-setup)
-  * [Usage](https://www.google.com/search?q=%23usage)
-  * [Project Structure](https://www.google.com/search?q=%23project-structure)
+  * Features
+  * Technology Stack
+  * Installation and Setup
+  * Usage
+  * Project Structure
 
 ## Features
 
