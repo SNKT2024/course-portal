@@ -13,7 +13,7 @@ import MyCourses from "./pages/teacher/dashboard/MyCourses";
 import HomePage from "./pages/teacher/dashboard/HomePage";
 import Revenue from "./pages/teacher/dashboard/Revenue";
 import StudentList from "./pages/teacher/dashboard/StudentList";
-import CreateCourse from "./pages/teacher/createCourse";
+import CreateCourse from "./pages/teacher/CreateCourse";
 import AddSections from "./pages/teacher/AddSections";
 import ViewCourse from "./pages/teacher/dashboard/ViewCourse";
 import EditCourseDetails from "./pages/teacher/EditCourseDetails";
