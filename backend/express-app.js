@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import mongoose from "mongoose";
+import { connectToDatabase } from "./src/db.js"; // use cached version
 
 import authRoutes from "./src/routes/auth.js";
 import courseRoutes from "./src/routes/courseRoutes.js";
@@ -13,6 +13,11 @@ import teacherRoutes from "./src/routes/teacherRoutes.js";
 
 dotenv.config();
 const app = express();
+
+console.log("📦 Initializing Express App");
+
+await connectToDatabase();
+console.log("✅ Mongo Connected");
 
 const allowedOrigins = [
   "https://course-portal-frontend-alpha.vercel.app",
@@ -33,12 +38,8 @@ app.use(
 );
 app.use(express.json());
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Mongo DB Connected"))
-  .catch((err) => console.error("Mongo DB connection error:", err));
-
 app.get("/", (req, res) => {
+  console.log("⚡ GET / hit");
   res.send("LMS backend is running");
 });
 
