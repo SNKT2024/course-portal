@@ -42,6 +42,10 @@ app.get("/", (req, res) => {
   console.log("⚡ GET / hit");
   res.send("LMS backend is running");
 });
+app.get("/api/test", (req, res) => {
+  console.log("🔥 /api/test hit");
+  res.send("Test route OK");
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/course", courseRoutes);
