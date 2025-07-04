@@ -49,4 +49,4 @@ app.use("/api/progress", progressRoutes);
 app.use("/api/student", studentRoutes);
 app.use("/api/teacher", teacherRoutes);
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log("Server is running on port: " + PORT));
+// app.listen(PORT, () => console.log("Server is running on port: " + PORT));
