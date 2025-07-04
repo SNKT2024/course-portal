@@ -12,7 +12,6 @@ import studentRoutes from "./src/routes/studentRoutes.js";
 import teacherRoutes from "./src/routes/teacherRoutes.js";
 
 dotenv.config();
-
 const app = express();
 
 const allowedOrigins = [
@@ -32,7 +31,6 @@ app.use(
     credentials: true,
   })
 );
-
 app.use(express.json());
 
 mongoose
