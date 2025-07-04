@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { connectToDatabase } from "./src/db.js"; // use cached version
+import { connectToDatabase } from "./src/config/db.js";
 
 import authRoutes from "./src/routes/auth.js";
 import courseRoutes from "./src/routes/courseRoutes.js";
